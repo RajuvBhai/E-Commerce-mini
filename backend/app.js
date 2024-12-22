@@ -10,6 +10,7 @@ const order = require('./routes/orderRouter');
 
 connectDatabase();
 
+app.use(express.json())
 // Prefix URL path
 app.use('/api/v1', products);
 app.use('/api/v1', order);
