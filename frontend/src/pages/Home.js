@@ -1,7 +1,15 @@
-import {Fragment} from 'react'
+import {Fragment, useEffect, useState} from 'react'
 import ProductCard from '../components/ProductCard'
 
 export default function Home() {
+const [products, setProducts] = useState([]);
+
+useEffect(() => {
+    fetch(process.env.REACT_APP_URL+'/products')
+    .then(res => res.json())
+    .then(res => setProducts(res))
+},[])
+
     return <Fragment>
 
 
