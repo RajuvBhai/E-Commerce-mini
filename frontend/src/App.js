@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductDetail from './pages/ProductDetail';
 import { useState } from 'react';
 import {ToastContainer} from 'react-toastify';
+import Cart from './pages/Cart';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/search" element={<Home/>}/>
             <Route path="/product/:id" element={<ProductDetail cartItems={cartItems} setCartItems={setCartItems}/>}/>
+            <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems}/>}/>
           </Routes>
           <Footer/>
         </div>
